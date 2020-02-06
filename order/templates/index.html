@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Nhập dữ liệu{% endblock %}
+{% block header %}
+    <nav id="navigator">
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+{% block content %}
+    <article>
+        <form action="{{ url_for('info') }}" method="POST">
+            <div class="form-group">
+                <label for="token" name="token">Token: </label>
+                <input type="text" class="form-control" id="token" name="token" placeholder="token">
+            </div>
+            <div class="form-group">
+                <label for="ordercode" name="ordercode">Order Code: </label>
+                <input type="text" class="form-control" name="ordercode" id="ordercode" placeholder="ordercode">
+            </div>
+            <div class="form-group">
+                <input type="submit">
+            </div>
+        </form>
+        <h1 class="guide">Hướng dẫn sử dụng:</h1>
+        <ol class="guide">
+            <li>Bước 1: Lấy access token tại <a href="https://api.ghn.vn/">API GHN</a></li>
+            <li>Bước 2: Copy access token đã lấy và nhập vào trường <b>Token</b></li>
+            <li>Bước 3: Nhập mã đơn GHN vào trường <b>Order Code</b> Nếu nhiều mã đơn thì nhập theo format:
+            mã đơn 1,mã đơn 2, mã đơn 3,...</li>
+            <li>Bước 4: Submit</li>
+        </ol>
+    </article>
+{% endblock %}

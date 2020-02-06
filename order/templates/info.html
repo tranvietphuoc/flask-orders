@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+    Thông tin đơn hàng
+{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+    {% for result in results %}
+        <div class="page">
+            <div class="content page-break">
+                <div class="row">
+                    <div class="row-left">
+                        <h4 class="left-header">Tuyến giao:</h4>
+                        <p class="left-content">{{ result.ShippingAddress }}</p> 
+                    </div>
+                    <div class="row-right">
+                        <h4 class="right-header">Trạng thái:</h4>
+                        <p class="right-content">{{ result.CurrentStatus }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="barcode" src="https://barcode.ghn.vn/api/v1/barcode/generate?code={{ result.OrderCode }}&type=C128A&width=620&height=80"
+                        alt="">
+                </div>
+                <div class="row">
+                    <p class="ordercode">{{ result.OrderCode }}</p>
+                </div>
+                <div class="row">
+                    <div class="row-left" id="left-footer">
+                        <h4 class="left-footer">Mã sort:</h4>
+                        <p class="left-content">{{ result.SortCode }}</p>
+                    </div>
+                    <div class="row-right" id="right-footer">
+                        <h4 class="right-footer">TG dự kiến giao:</h4>
+                        <p class="right-content">{{ result.ExpectedDeliveryTime }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

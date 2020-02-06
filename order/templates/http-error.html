@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}OOPS! Đã xảy ra lỗi{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p class="alert alert-light">OOPS! Đã xảy ra lỗi, vui lòng kiểm tra lại!</p>
+            <ul class="alert alert-danger">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

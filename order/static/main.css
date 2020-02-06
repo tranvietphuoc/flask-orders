@@ -1,0 +1,135 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font: 12pt "Arial monospace sans-serif";
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.page {
+    width: 4.1in;
+    min-height: 3in;
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+/* .subpage {
+    padding: 20px;
+    border: 5px red solid;
+    height: 3in;
+    outline: 20px #FFEAEA solid;
+} */
+
+@page {
+    width: 4.1in;
+    height: 3in;
+    min-height: auto;
+    margin: 0;
+    size: auto;
+    
+}
+@media print {
+    html, body {
+        width: 4.1in;
+        height: 3in;   
+            
+    }
+    @page {
+        clear: both;
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: inherit;
+        min-height: inherit;
+        /* box-shadow: initial; */
+        background: initial;
+        /* page-break-after: always;
+        page-break-before: always; */
+        size: auto;
+    }
+    .content {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        content: ".";
+    }
+}
+.content {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.content.page-break {
+    display: block;
+    page-break-after: always;
+}
+ul > li {
+    list-style-type: none;
+}
+form {
+    padding: 1em;
+    margin: 1em
+}
+h1 {
+    padding: 1em;
+    margin: 1em;
+}
+ol > .guide {
+    padding: 1em;
+    margin: 1em;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+}
+.row > img {
+    display: block;
+    margin: 0 auto;
+    width: 310px;
+    height: 40px;
+}
+.row:nth-child(3) {
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    padding: auto;
+}
+.row-left {
+    display: block;
+    float: left;
+    width: 65%;
+    border: 0.5px solid;
+    padding: 0.5em;
+    word-wrap: break-word;
+}
+.row-right {
+    display: block;
+    float: left;
+    width: 35%;
+    border: 0.5px solid;
+    padding: 0.5em;
+    word-wrap: break-word;
+}
+
+#left-footer {
+    width: 50%;
+    text-align: center;
+}
+#right-footer {
+    width: 50%;
+    text-align: center;
+}

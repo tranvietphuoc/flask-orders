@@ -1,6 +1,6 @@
 language: python
 os: osx
-install:
-    - pip install -r requirements.txt
-virtualenv:
-    system_site_packages: true
+jobs:
+    include:
+        - name: "3.8 Test"
+          python: "3.8"

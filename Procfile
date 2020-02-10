@@ -1,2 +1,2 @@
-web: gunicorn -b :$PORT order:app --preload
+web: gunicorn --chdir order app:app --preload
 
